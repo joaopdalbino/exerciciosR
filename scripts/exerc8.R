@@ -1,7 +1,7 @@
 library(readxl)
 
 #lendo os dados
-data <- read_excel('data/exercicio8.xls')
+data <- read_excel('../dados/exercicio8.xls')
 
 #estruturando os dados
 data <- stack(data)
@@ -17,10 +17,13 @@ d.cut <- cut(data$values, seq)
 d.freq <- table(d.cut)
 cbind(d.freq)
 
-#histograma
+# salvar pdf do gráfico
+pdf("../graficos/ex8.pdf")
 hist(data$values, 
-     main="Histograma  de Salário", 
+     main="Histograma de Altura", 
      xlab="Altura",
      ylab="Frequência",
      border="blue", 
      col="green")
+dev.off()
+#histograma

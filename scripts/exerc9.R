@@ -1,7 +1,7 @@
 library(readxl)
 
 #lendo os dados
-data <- read_excel('data/exercicio9.xls')
+data <- read_excel("../dados/exercicio9.xls")
 
 #estruturando os dados
 
@@ -25,3 +25,13 @@ hist(data$Salários, breaks = seq,
      ylab="Frequência")
 axis(side=1, at=seq(1,24, by=1), labels=seq(1,24, by=1))
 axis(side=2, at=seq(1,8, by=1), labels=seq(1,8, by=1))
+
+# salvar pdf do gráfico
+pdf("../graficos/ex9.pdf")
+hist(data$Salários, breaks = seq,
+     main="Histograma de Salário", 
+     xlab="Salário",
+     ylab="Frequência")
+axis(side=1, at=seq(1,24, by=1), labels=seq(1,24, by=1))
+axis(side=2, at=seq(1,8, by=1), labels=seq(1,8, by=1))
+dev.off()

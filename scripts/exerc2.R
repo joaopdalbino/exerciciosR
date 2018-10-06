@@ -2,8 +2,11 @@ install.packages("readxl")
 
 library("readxl")
 
+#abre arquivo pdf para poder salvar o gráfico
+pdf("../graficos/ex2.pdf")
+
 #lendo xls e atribuindo os valores da coluna Casa para coluna
-data <- read_xls("data/exercicio2.xls")
+data <- read_excel("../dados/exercicio2.xls")
 coluna <- data$Casas
 
 #a) frequência
@@ -55,3 +58,6 @@ tabela <- as.data.frame(frequencia)
 #c)Gráficos
 plot(data$Casas) #gráfico simples de coluna casa
 plot(data$Casas, type="h") #gráfico simples de coluna casa
+
+#fecha pdf
+dev.off()

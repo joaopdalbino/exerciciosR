@@ -2,7 +2,7 @@ install.packages("readxl")
 library("readxl")
 
 #usando xls
-data <- read_excel("data/exercicio1.xls")
+data <- read_excel("../dados/exercicio1.xls")
 
 #atribuindo os valores de taxas de juros à coluna
 coluna <- data$`Taxas de juros`
